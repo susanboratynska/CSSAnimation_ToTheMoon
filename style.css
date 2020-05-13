@@ -1,0 +1,644 @@
+/* INSPIRATION:  https://codepen.io/llang8/pen/oVWVJR*/
+
+html {
+	box-sizing: border-box;;
+	font-family: 'Baloo', cursive;
+}
+
+*, *:before, *:after { 
+	box-sizing: inherit;
+}
+
+.page-wrapper {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.center {
+	margin: auto;
+}
+
+h1{
+	text-align: center;
+}
+
+h2{
+    margin-top: 0;
+}
+
+/* 
+SRC: wk11-challenges - HTTP5104 Lectures
+PURPOSE: 3D button animation/styling
+*/
+#start {
+  border-radius:5px;
+  padding:0.8em 1.5em;
+  background-color:#ddd;
+  border:0;
+  box-shadow:0 4px 0 #b2b2b2; 
+  margin-bottom:1em;
+  transition:all 0.2s;
+  overflow:hidden;
+  font-family: 'Baloo', cursive;
+}
+
+#start:active {
+  box-shadow:0 0 0 #1b3f59;
+  transform:translateY(3px);
+}
+
+
+/* ----- CONTAINER - MESSAGE ----- */
+
+#interactive_msg{
+	display: none;
+	color: yellow;
+	padding-left: 20px;
+	position: absolute;
+	top: -10px;
+	filter: drop-shadow(0 0 3px #7da8ff);
+}
+
+#interactive_msg.show_msg{
+	display: inline-block;
+	animation: appear 3s forwards;
+}
+
+@keyframes appear {
+    0% {
+        top: -20px;
+    } 
+    100% {
+        top: 5%;
+    }
+}
+
+
+/* ----- CONTAINER - SKY ----- */
+
+#container_sky {
+	background-color: #5995B7;
+	height: 400px;
+	border: none;
+	position: relative;
+	overflow: hidden;
+}
+
+.darkening_sky{
+	animation: sky 10s forwards;
+}
+
+@keyframes sky {
+	0% {
+		background-color: #5995B7;
+	}
+
+	30%{
+		background-color: #25587C;
+	}
+
+	70%{
+		background-color: #25587C;
+	}
+
+	100%{
+		background-color: #1b3f59;
+	}
+}
+
+
+/* ----- STARS ----- */
+
+#container_stars {
+	height: 400px;
+	border: none;
+	position: relative;
+}
+
+.stars {
+    position: absolute;
+}
+
+.stars_small {
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    left:15px;
+    animation: starAnimation 19s linear infinite;
+    filter: drop-shadow(0 0 6px #7da8ff);
+ }
+
+ .stars_medium {
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    transform: rotate(45deg);
+    position: absolute;
+    left:12px;
+    animation: starAnimation 21s linear infinite;
+    filter: drop-shadow(0 0 6px #7da8ff);
+ }
+
+
+ input {
+    display: hidden;
+    margin-left: 500px;
+ }
+
+
+ .fa-star{
+    color: yellow;
+ }
+
+
+ .stars_shootingStars {
+    width: 15px;
+    height: 15px;
+    /*background-color: yellow;*/
+    transform: rotate(45deg);
+    position: absolute;
+    left:30px;
+    top: -20px;
+    filter: drop-shadow(0 0 6px #7da8ff);
+    animation: starAnimation 5s 2s linear infinite;
+ }
+
+
+@keyframes starAnimation {
+    0% {
+        top:0;
+    } 
+    100% {
+        top: 100%;
+    }
+}
+
+input[type='radio'] { 
+	transform: scale(3); 
+	opacity: 0;
+}
+
+label{
+	white-space: nowrap;
+    margin-left: 500px;
+}
+/* 
+SRC: https://codepen.io/elad2412/pen/hBaqo
+PURPOSE: Reference to create interactive portion;
+*/
+
+label>span:before{
+  content:"Make a Wish!"; color:red; font-weight:bold;
+  display: none;
+  font-family: 'Baloo', cursive;
+}
+
+
+.star_input:not(:checked) ~ .label_msg {
+  opacity:1; 
+}
+
+
+.star_input:checked ~ .label_msg span:before {
+  display: block;
+  transform: rotate(-45deg);
+
+}
+
+/* ----- CONTAINER - MOON ----- */
+
+
+#moon_container{
+	width: 175px;
+	height: 175px;
+	top:-200px;
+	border-top:none;
+	position: relative;
+}
+
+.moon_animation {
+	animation: moon_appear 20s forwards;
+}
+
+@keyframes moon_appear {
+	0% { top: -200px; }
+	100% { top: 0; }
+}
+
+
+#moon_body_shadow {
+ 	width: 103%;
+    height: 53%;
+    background: #cccccc;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    position: absolute;
+    right: -1px;
+    filter: drop-shadow(0 0 4px #96acd9);
+}
+
+#moon_body {
+ 	width: 100%;
+	height: 50%;
+	background: #DAD9D7;
+	border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+	position: absolute;
+}
+
+#moon_crater_1_shadow {
+ 	width: 27px;
+    height: 22px;
+    background: #999999;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    transform: rotate(59deg);
+}
+
+#moon_crater_1 {
+ 	width: 25px;
+    height: 21px;
+    background: #b2b2b2;
+    border-radius: 50%;
+    position: absolute;
+    left: 17px;
+    top: 15px;
+    transform: rotate(59deg);
+}
+
+#moon_crater_2_shadow {
+    width: 48px;
+    height: 30px;
+    background: #999999;
+    border-radius: 50%;
+    position: absolute;
+    left: 108px;
+    top: 20px;
+    transform: rotate(126deg);
+}
+
+#moon_crater_2{
+    width: 46px;
+    height: 28px;
+    background: #b2b2b2;
+    border-radius: 50%;
+    position: absolute;
+    left: 108px;
+    top: 20px;
+    transform: rotate(126deg);
+}
+
+#moon_crater_3_shadow {
+    width: 14px;
+    height: 10px;
+    background: #999999;
+    border-radius: 50%;
+    position: absolute;
+    left: 38px;
+    top: 51px;
+    transform: rotate(48deg);
+}
+
+#moon_crater_3 {
+    width: 13px;
+    height: 9px;
+    background: #b2b2b2;
+    border-radius: 50%;
+    position: absolute;
+    left: 39px;
+    top: 51px;
+    transform: rotate(48deg);
+}
+
+#moon_crater_4_shadow {
+    width: 17px;
+    height: 12px;
+    background: #999999;
+    border-radius: 50%;
+    position: absolute;
+    left: 155px;
+    top: 3px;
+    transform: rotate(120deg);
+}
+
+#moon_crater_4 {
+    width: 15px;
+    height: 11px;
+    background: #b2b2b2;
+    border-radius: 50%;
+    position: absolute;
+    left: 155px;
+    top: 3px;
+    transform: rotate(120deg);
+}
+
+
+
+
+/* ----- CONTAINER - ROCKET ----- */
+
+
+
+#rocket_container{
+	width: 150px;
+	height: 130px;
+	/*border: solid 1px white;*/
+	left: 50%;
+	position: relative;
+	transform: translate(-50%, -50%);
+	top: 125px;
+	z-index: 2;
+}
+
+.blast-off {
+    animation: blast-off  0.75s infinite;
+    left: 42.2% !important;
+    top: 65px !important;
+}
+
+@keyframes blast-off {
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(3px)
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+#rocket_body{
+  	width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 40% 80% 5% 80%;
+    transform: rotate(45deg);
+    position:relative;
+}
+
+#rocket_body_glare{
+	width: 5px;
+    height: 21px;
+    background-color: #f0807a;
+    border-radius: 40% 80% 50% 50% / 80% 80% 30% 10%;
+    top: 5px;
+    position: absolute;
+    left: 97px;
+    transform: rotate(-40deg);
+}
+
+#rocket_window {
+	width: 30px;
+	height: 30px;
+	background-color: lightgrey;
+	border: solid 3px grey;
+	border-radius: 50%;
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+}
+
+#rocket_window_glare {
+	width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 11px;
+    right: 0;
+    top: 30px;
+}
+
+#rocket_base {      
+	border-bottom: 30px solid black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 0;
+    width: 55px;
+    position: absolute;
+    top: 95px;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 8%;
+}
+
+
+#rocket_wing_left{
+	width: 31px;
+    height: 39px;
+    background: black;
+    position: absolute;
+    left: 27px;
+    top: 55px;
+    z-index: -1;
+    transform: rotate(15deg);
+    border-radius: 8%;
+}
+
+#rocket_wing_right{
+	width: 31px;
+    height: 39px;
+    background: black;
+    position: absolute;
+    left: 90px;
+    top: 55px;
+    z-index: -1;
+    transform: rotate(-15deg);
+    border-radius: 8%;
+}
+
+#rocket_wing_front {
+	width: 4px;
+    height: 33px;
+    background: black;
+    position: absolute;
+    border-radius: 20%;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+
+/* ----- CONTAINER - FLAME ----- */
+
+#flame {
+    top: 75%;
+    right: 0;
+    left: 0;
+    width: 30px;
+    height: 60px;
+    background: linear-gradient(to top, transparent 10%, #f5f5f5 100%);
+    position: absolute;
+/*  	animation: take-off 2s 1 normal forwards;*/
+  }
+
+ .rocket_flame{
+    animation: take-off 2s 1 normal forwards;
+
+ }
+
+
+@keyframes take-off {
+	0% { top: 75%; }
+	100% { top: 90%; }
+}
+
+
+/* ----- CONTAINER - FUMES ----- */
+
+#fume_1 {
+    width: 80px;
+    height: 77px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 65px;
+    right: 0;
+    top: 400px;
+    opacity: 0.3;
+}
+
+#fume_2 {
+    width: 70px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 55px;
+    top: 404px;
+    opacity: 0.5;
+}
+
+#fume_3 {
+    width: 80px;
+    height: 75px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 5px;
+    top: 405px;
+    opacity: 0.75;
+}
+
+#fume_4 {
+    width: 130px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    right: 0;
+    top: 400px;
+    opacity: 0.2;
+}
+
+#fume_5 {
+    width: 70px;
+    height: 65px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    right: 0;
+    top: 400px;
+    opacity: 0.4;
+}
+
+.fumes_animation_1 {
+    animation: fumes_burst_two 2.5s infinite linear;
+}
+
+.fumes_animation_2 {
+    animation: fumes_burst 3s infinite linear;
+}
+
+.fumes_animation_3 {
+    animation: fumes_burst_two 2.75s infinite linear;
+}
+
+.fumes_animation_4 {
+    animation: fumes_scale_two 2s infinite linear;
+}
+
+.fumes_animation_5 {
+    animation: fumes_scale 1.5s infinite linear;
+}
+
+@keyframes fumes_scale {
+	50% { 
+		transform: scale(1.25); 
+	}
+ 	100% { 
+ 		opacity: 0.3; 
+ 		top: 380px;
+ 	}
+}
+
+@keyframes fumes_scale_two {
+	50% { transform: scale(1.15); }
+ 	100% { 
+ 		opacity: 0.2; 
+ 	    top: 368px;
+ 	}
+}
+
+@keyframes fumes_burst {
+	100% { 
+		opacity: 0;
+	    top: 385px; }
+
+}
+
+@keyframes fumes_burst_two {
+	100% { 
+		opacity: 0; 
+	    top: 385px;
+	}
+
+}
+
+
+@keyframes moon_appear {
+	0% { top: -100px; }
+	100% { top: 0; }
+}
+
+
+@media screen and (max-width: 748px) {
+	#interactive_msg {
+		white-space: pre-line;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
