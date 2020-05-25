@@ -9,6 +9,7 @@ html {
 	box-sizing: inherit;
 }
 
+
 .page-wrapper {
 	max-width: 980px;
 	margin: 0 auto;
@@ -30,6 +31,18 @@ h1{
 h2{
     margin-top: 0;
 }
+
+footer{
+    height: 3.5em;
+    margin-top:1em;
+    font-size: 10px;
+    padding-top:8px;
+    text-align: right;
+    padding-right:5px;
+}
+
+
+
 
 /* 
 SRC: wk11-challenges - HTTP5104 Lectures
@@ -628,6 +641,7 @@ label>span:before{
 	}
 
 }
+
 
 
 
