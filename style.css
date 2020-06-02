@@ -96,7 +96,7 @@ PURPOSE: 3D button animation/styling
 
 #container_sky {
 	background-color: #5995B7;
-	height: 400px;
+	height: 500px;
 	border: none;
 	position: relative;
 	overflow: hidden;
@@ -128,7 +128,7 @@ PURPOSE: 3D button animation/styling
 /* ----- STARS ----- */
 
 #container_stars {
-	height: 400px;
+	height: 500px;
 	border: none;
 	position: relative;
 }
@@ -368,14 +368,14 @@ label>span:before{
 	left: 50%;
 	position: relative;
 	transform: translate(-50%, -50%);
-	top: 125px;
+	top: 225px;
 	z-index: 2;
 }
 
 .blast-off {
     animation: blast-off  0.75s infinite;
-    left: 42.2% !important;
-    top: 65px !important;
+    left: 42.4% !important;
+    top: 155px !important;
 }
 
 @keyframes blast-off {
@@ -414,8 +414,8 @@ label>span:before{
 }
 
 #rocket_window {
-	width: 30px;
-	height: 30px;
+	width: 34px;
+	height: 34px;
 	background-color: lightgrey;
 	border: solid 3px grey;
 	border-radius: 50%;
@@ -444,8 +444,8 @@ label>span:before{
     width: 55px;
     position: absolute;
     top: 95px;
-    right: 0;
-    left: 0;
+    right: 1px;
+    left: 2px;
     z-index: -1;
     border-radius: 8%;
 }
@@ -468,7 +468,7 @@ label>span:before{
     height: 39px;
     background: black;
     position: absolute;
-    left: 90px;
+    left: 92px;
     top: 55px;
     z-index: -1;
     transform: rotate(-15deg);
@@ -523,7 +523,7 @@ label>span:before{
     position: absolute;
     left: 65px;
     right: 0;
-    top: 400px;
+    top: 500px;
     opacity: 0.3;
 }
 
@@ -535,7 +535,7 @@ label>span:before{
     position: absolute;
     left: 0;
     right: 55px;
-    top: 404px;
+    top: 504px;
     opacity: 0.5;
 }
 
@@ -547,7 +547,7 @@ label>span:before{
     position: absolute;
     left: 0;
     right: 5px;
-    top: 405px;
+    top: 505px;
     opacity: 0.75;
 }
 
@@ -559,7 +559,7 @@ label>span:before{
     position: absolute;
     left: 10px;
     right: 0;
-    top: 400px;
+    top: 500px;
     opacity: 0.2;
 }
 
@@ -571,7 +571,7 @@ label>span:before{
     position: absolute;
     left: 25px;
     right: 0;
-    top: 400px;
+    top: 500px;
     opacity: 0.4;
 }
 
@@ -601,7 +601,7 @@ label>span:before{
 	}
  	100% { 
  		opacity: 0.3; 
- 		top: 380px;
+ 		top: 464px;
  	}
 }
 
@@ -609,21 +609,21 @@ label>span:before{
 	50% { transform: scale(1.15); }
  	100% { 
  		opacity: 0.2; 
- 	    top: 368px;
+ 	    top: 453px;
  	}
 }
 
 @keyframes fumes_burst {
 	100% { 
 		opacity: 0;
-	    top: 385px; }
+	    top: 462px; }
 
 }
 
 @keyframes fumes_burst_two {
 	100% { 
 		opacity: 0; 
-	    top: 385px;
+	    top: 465px;
 	}
 
 }
